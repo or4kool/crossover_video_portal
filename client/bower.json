@@ -1,0 +1,27 @@
+{
+  "name": "samuel oriaku",
+  "authors": [
+    "NUKE-PC\\Samuel Oriaku <oriaku.samuel@gmail.com>"
+  ],
+  "description": "cross over video portal application",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.3",
+    "angular-resource": "^1.6.3",
+    "angular-sanitize": "^1.6.3",
+    "angular": "^1.6.3",
+    "angular-md5": "^0.1.10",
+    "crypto-js": "^3.1.9",
+    "bootstrap": "^3.3.7",
+    "angular-mocks": "^1.6.3"
+  }
+}

@@ -1,0 +1,84 @@
+<!-- <div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+ -->
+
+ <nav class="navbar navbar-default navbar-static-top">
+       <div class="container">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="<?=site_url('backoffice')?>">Welcome to Crossover Video Portal</a>
+         </div>
+         <div id="navbar" class="navbar-collapse collapse">
+           
+           <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="javascript;;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="fa fa-user"></span>Hi <strong>{{username}}</strong><span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="" ng-click="logout()"><span class="fa fa-lock"></span>Sign Out</a></li>
+               </ul>
+             </li>
+           </ul>
+         </div><!--/.nav-collapse -->
+       </div>
+ </nav>
+ <div class="container-fluid" infinite-scroll="loadMore()">
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12 top-title"><h2>Crossover Video Portal</h2></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12 animated fadeInUp">
+
+        <!-- START SINGLE VIDEO -->
+          <div class="col-md-3 all-single animated slideInUp" ng-repeat="video in videos">
+            <div class="col-md-12 no-padding video-single">
+              <div class="col-md-12 video-title">
+                <p><a href="" ng-click="goDetail(video._id)">{{video.name}}</a></p>
+              </div>
+              <div class="col-md-12">
+
+                <video controls class="video-player">
+                <source  src="{{video.url}}" type="video/mp4">
+                </video>
+              </div>
+              <div class="rating">
+                <rating-dir video-id = video._id current-star = video.ratings[video.ratings.length-1]></rating-dir>
+              </div>
+              <div class="col-md-12 decrp">
+                <p>{{video.description | limitTo: 50}}{{video.description.length > 20 ? '...' : ''}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
